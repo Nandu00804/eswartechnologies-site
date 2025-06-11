@@ -1,33 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>User Home</title>
-  <link rel="stylesheet" href="../assets/css/home.css">
-</head>
+<html><head><meta charset="UTF-8"><title>Home</title>
+<link rel="stylesheet" href="assets/css/home.css"></head>
 <body>
-
-<button id="logoutBtn" style="float:right; margin:10px; background:red; color:white; border:none; padding:10px; border-radius:5px;">Logout</button>
-<div id="profile">
-  <h3>My Profile</h3>
-  <p><strong>Name:</strong> <span id="name"></span></p>
-  <p><strong>Aadhaar:</strong> <span id="aadhaar"></span></p>
-  <p><strong>Mobile:</strong> <span id="mobile"></span></p>
-</div>
-
+<button id="logoutBtn">Logout</button>
+<div id="profile"><h3>Profile</h3>
+<p>Name: <span id="name"></span></p>
+<p>Aadhaar: <span id="aadhaar"></span></p>
+<p>Mobile: <span id="mobile"></span></p></div>
 <div id="upload-section">
-  <h2>Upload a Photo</h2>
-  <input type="file" id="photoInput" accept="image/*" />
-  <textarea id="caption" placeholder="Enter caption..."></textarea>
-  <button id="uploadBtn" onclick="uploadPhoto()">Upload Photo</button>
-  <p id="waitMsg" style="color:red;"></p>
-</div>
-
-<div id="gallery">
-  <h3>Uploaded Photos</h3>
-  <div id="photoList"></div>
-</div>
-
-<script src="../assets/js/home.js"></script>
-</body>
-</html>
+<input type="file" id="photoInput"><textarea id="caption"></textarea>
+<button onclick="uploadPhoto()">Upload</button><p id="waitMsg"></p></div>
+<div id="gallery"><h3>Photos</h3><div id="photoList"></div></div>
+<script src="assets/js/home.js"></script></body></html>
