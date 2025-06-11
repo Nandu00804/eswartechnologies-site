@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-container" id="login-page">
+    <h1>Admin Login</h1>
+    <form id="admin-login-form">
+      <label for="admin-username">Username:</label>
+      <input type="text" id="admin-username" required>
+      
+      <label for="admin-password">Password:</label>
+      <input type="password" id="admin-password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div class="dashboard-container" id="dashboard-page" style="display: none;">
+    <h1>Admin Dashboard</h1>
+    <h2>Welcome, Nandhu!</h2>
+    
+    <!-- Create New User Section -->
+    <div class="form-section">
+      <h3>Create New User</h3>
+      <form id="create-user-form">
+        <label for="aadhar">Aadhaar Number:</label>
+        <input type="text" id="aadhar" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" required>
+        
+        <label for="user-id">Unique ID:</label>
+        <input type="text" id="user-id" required>
+
+        <!-- Password Field for Admin to Assign -->
+        <label for="password">Password:</label>
+        <input type="text" id="password" required>
+        
+        <button type="submit">Create User</button>
+      </form>
+    </div>
+
+    <!-- Search User Section -->
+    <div class="search-section">
+      <h3>Search User by ID</h3>
+      <input type="text" id="search-id" placeholder="Enter User ID">
+      <button id="search-button">Find User</button>
+      <div id="search-result"></div>
+    </div>
+    
+    <div class="user-list-section">
+      <h3>Registered Users</h3>
+      <ul id="user-list"></ul>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

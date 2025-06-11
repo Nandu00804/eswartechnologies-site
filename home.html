@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Home</title>
+  <link rel="stylesheet" href="../assets/css/home.css">
+</head>
+<body>
+
+<div id="profile">
+  <h3>My Profile</h3>
+  <p><strong>Name:</strong> <span id="name"></span></p>
+  <p><strong>Aadhaar:</strong> <span id="aadhaar"></span></p>
+  <p><strong>Mobile:</strong> <span id="mobile"></span></p>
+</div>
+
+<div id="upload-section">
+  <h2>Upload a Photo</h2>
+  <input type="file" id="photoInput" accept="image/*" />
+  <textarea id="caption" placeholder="Enter caption..."></textarea>
+  <button id="uploadBtn" onclick="uploadPhoto()">Upload Photo</button>
+  <p id="waitMsg" style="color:red;"></p>
+</div>
+
+<div id="gallery">
+  <h3>Uploaded Photos</h3>
+  <div id="photoList"></div>
+</div>
+
+<script src="../assets/js/home.js"></script>
+</body>
+</html>
