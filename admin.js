@@ -7,13 +7,18 @@ document.getElementById("userForm").addEventListener("submit", function (e) {
   const password = document.getElementById("password").value.trim();
   const message = document.getElementById("message");
 
-  if (!/^\\d{12}$/.test(aadhar)) {
-    message.textContent = "Invalid Aadhaar number!";
+  if (!/^\d{12}$/.test(aadhar)) {
+    message.textContent = "Invalid Aadhaar!";
     return;
   }
 
-  if (!/^\\d{10}$/.test(phone)) {
-    message.textContent = "Invalid phone number!";
+  if (!/^\d{10}$/.test(phone)) {
+    message.textContent = "Invalid Phone!";
+    return;
+  }
+
+  if (!userId || !password) {
+    message.textContent = "User ID and Password required!";
     return;
   }
 
@@ -33,8 +38,7 @@ document.getElementById("userForm").addEventListener("submit", function (e) {
 function renderUserList() {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const list = document.getElementById("userList");
-  list.innerHTML = "<h3>Registered Users</h3>" + users.map(u =>
-    `<p>${u.userId} - ${u.phone}</p>`).join("");
+  list.innerHTML = "<h3>Registered Users</h3>" + users.map(u => `<p>${u.userId} - ${u.phone}</p>`).join("");
 }
 
 renderUserList();
