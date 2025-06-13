@@ -1,6 +1,23 @@
 <html><head><link rel="stylesheet" href="assets/css/styles.css"></head>
-<body><div class="container"><h1>Admin</h1>
-<form id="userForm"><input id="aadhar"><input id="phone"><input id="userId"><input id="password">
-<button type="submit">Create User</button></form><p id="message"></p><div id="userList"></div>
-<button id="adminLogoutBtn">Logout</button></div>
+<body>
+<div class="container">
+<h1>Admin Panel</h1>
+<button id="logoutAdmin">Logout</button>
+<form id="userForm">
+<input id="aadhar" placeholder="Aadhaar Number"><input id="phone" placeholder="Phone Number">
+<input id="userId" placeholder="User ID"><input id="password" placeholder="Password">
+<button type="submit">Create User</button></form>
+<p id="message"></p><hr>
+<h3>Find User Details</h3>
+<input id="findUserId" placeholder="Enter User ID"><button onclick="findUser()">Find</button>
+<p id="foundUser"></p><hr><div id="userList"></div>
+</div>
+<script>
+const adminPassword="admin123";
+if(!sessionStorage.getItem("adminAuth")) {
+  const pwd=prompt("Enter Admin Password:");
+  if(pwd!==adminPassword){alert("Access Denied!");location.href="user.html";}
+  else{sessionStorage.setItem("adminAuth", true);}
+}
+</script>
 <script src="assets/js/admin.js"></script></body></html>
